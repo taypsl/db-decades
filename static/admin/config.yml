@@ -27,33 +27,6 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
 
-  - name: "featured"
-    label: "Featured"
-    folder: "src/pages/featured"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "featured-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "markdown"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Songs", name: "songs", widget: "list", fields: [
-          {label: "Song Title", name: "songTitle", widget: "string"}, 
-          {label: "Artist", name: "artist", widget: "string"}, 
-          {label: "Album", name: "album", widget: "string"},
-          {label: "Image", name: "imageUrl", widget: "image"},
-          {label: "Rank", name: "rank", widget: "number", valueType: "int"},
-          {label: "Year", name: "year", widget: "number", valueType: "int"},
-          {label: "Blurb", name: "blurb", widget: "markdown"},
-          {label: "Video Url", name: "videoUrl", widget: "string"},
-          {label: "Song Title", name: "songTitle", widget: "string"},
-          {label: "Genres", name: "genres", widget: "list"}
-          {label: "Misc", name: "misc", widget: "string"},
-        ]}
-
   - name: "pages"
     label: "Pages"
     files:
@@ -91,3 +64,30 @@ collections:
           - {label: Testimonials, name: testimonials, widget: list, fields: [{label: Quote, name: quote, widget: string}, {label: Author, name: author, widget: string}]}
           - {label: Full_image, name: full_image, widget: image}
           - {label: Pricing, name: pricing, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Description, name: description, widget: string}, {label: Plans, name: plans, widget: list, fields: [{label: Plan, name: plan, widget: string}, {label: Price, name: price, widget: string}, {label: Description, name: description, widget: string}, {label: Items, name: items, widget: list}]}]}
+
+  - name: "featured"
+    label: "Featured"
+    folder: "src/pages/featured"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "featured-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Songs", name: "songs", widget: "list", fields: [
+          {label: "Song Title", name: "songTitle", widget: "string"}, 
+          {label: "Artist", name: "artist", widget: "string"}, 
+          {label: "Album", name: "album", widget: "string"},
+          {label: "Image", name: "imageUrl", widget: "image"},
+          {label: "Rank", name: "rank", widget: "number", valueType: "int"},
+          {label: "Year", name: "year", widget: "number", valueType: "int"},
+          {label: "Blurb", name: "blurb", widget: "markdown"},
+          {label: "Video Url", name: "videoUrl", widget: "string"},
+          {label: "Song Title", name: "songTitle", widget: "string"},
+          {label: "Genres", name: "genres", widget: "list"},
+          {label: "Misc", name: "misc", widget: "string"}
+        ]}
