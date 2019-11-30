@@ -83,6 +83,7 @@ collections:
           {label: "Artist", name: "artist", widget: "string"}, 
           {label: "Album", name: "album", widget: "string"},
           {label: "Image", name: "imageUrl", widget: "image"},
+          {label: "Image Attribute", name: "imageAttribute", widget: "string"},
           {label: "Rank", name: "rank", widget: "number", valueType: "int"},
           {label: "Year", name: "year", widget: "number", valueType: "int"},
           {label: "Blurb", name: "blurb", widget: "markdown"},
