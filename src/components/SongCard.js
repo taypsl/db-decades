@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const SongCard = ({ data }) => (
+const SongCard = ({ gridItems }) => (
   <div className="columns"
-    {data.map(song=> (
-      <div key={song.rank} className="column"></div>
+    {gridItems.map(song=> (
+      <div key={song.rank} className="column">{ song.artist }</div>
     ))}
   </div>
 )
 
-Songs.propTypes = {
-  data: PropTypes.arrayOf(
+SongCard.propTypes = {
+  gridItems: PropTypes.arrayOf(
     PropTypes.shape({
       songTitle: PropTypes.string,
       artist: PropTypes.string,
@@ -21,3 +21,5 @@ Songs.propTypes = {
     })
   ),
 }
+
+export default SongCard
