@@ -6,7 +6,6 @@ import SongCard from '../components/SongCard'
 import Content, { HTML } from '../components/Content'
 
 export const FeaturePageTemplate = ({
-  featuredHeroImage,
   title,
   description,
   body,
@@ -15,11 +14,6 @@ export const FeaturePageTemplate = ({
   <div className="content">
     <div
       className="full-width-image-container margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!featuredHeroImage.childImageSharp ? featuredHeroImage.childImageSharp.fluid.src : featuredHeroImage
-        })`,
-      }}
     >
       <h2
         className="has-text-weight-bold is-size-1"
@@ -54,7 +48,6 @@ export const FeaturePageTemplate = ({
 )
 
 FeaturePageTemplate.propTypes = {
-  featuredHeroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   description: PropTypes.string,
   body: PropTypes.string,
@@ -76,7 +69,6 @@ const FeaturePage = ({ data }) => {
   return (
     <Layout>
       <FeaturePageTemplate
-        featuredHeroImage={frontmatter.featuredHeroImage}
         title={frontmatter.title}
         description={frontmatter.description}
         body={frontmatter.body}
@@ -101,27 +93,11 @@ export const featurePageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        featuredHeroImage {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        body
         description
         songs {
-          songImage {
-            childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
           songTitle
           artist
           album
-          imageAttribute
           rank
           year
           blurb
