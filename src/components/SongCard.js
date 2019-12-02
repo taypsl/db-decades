@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const SongCard = ({ gridItems }) => (
-  <div className="columns"
+  <div className="columns">
     {gridItems.map(song=> (
       <div key={song.rank} className="column">{ song.artist }</div>
     ))}

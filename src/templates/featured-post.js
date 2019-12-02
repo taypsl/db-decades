@@ -5,8 +5,8 @@ import Layout from '../components/Layout'
 import SongCard from '../components/SongCard'
 import Content, { HTML } from '../components/Content'
 
-export const FeaturePageTemplate ({
-  featuredImage,
+export const FeaturePageTemplate = ({
+  featuredHeroImage,
   title,
   description,
   body,
@@ -17,7 +17,7 @@ export const FeaturePageTemplate ({
       className="full-width-image-container margin-top-0"
       style={{
         backgroundImage: `url(${
-          !!featuredImage.childImageSharp ? featuredImage.childImageSharp.fluid.src : featuredImage
+          !!featuredHeroImage.childImageSharp ? featuredHeroImage.childImageSharp.fluid.src : featuredHeroImage
         })`,
       }}
     >
@@ -54,7 +54,7 @@ export const FeaturePageTemplate ({
 )
 
 FeaturePageTemplate.propTypes = {
-  featuredImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  featuredHeroImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   description: PropTypes.string,
   body: PropTypes.string,
@@ -76,7 +76,7 @@ const FeaturePage = ({ data }) => {
   return (
     <Layout>
       <FeaturePageTemplate
-        featuredImage={frontmatter.featuredImage}
+        featuredImage={frontmatter.featuredHeroImage}
         title={frontmatter.title}
         description={frontmatter.description}
         body={frontmatter.body}
@@ -101,7 +101,7 @@ export const featurePageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        featuredImage {
+        featuredHeroImage {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
