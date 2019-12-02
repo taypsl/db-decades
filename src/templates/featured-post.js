@@ -76,7 +76,7 @@ const FeaturePage = ({ data }) => {
   return (
     <Layout>
       <FeaturePageTemplate
-        featuredImage={frontmatter.featuredHeroImage}
+        featuredHeroImage={frontmatter.featuredHeroImage}
         title={frontmatter.title}
         description={frontmatter.description}
         body={frontmatter.body}
